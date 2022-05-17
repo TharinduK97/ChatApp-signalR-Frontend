@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
+import { UserContext } from '../App';
+import React, { useContext } from 'react';
 
 const MessageContainer = ({ messages }) => {
     const messageRef = useRef();
+    const {loggeduser,setloggeduser} = useContext(UserContext);
 
     useEffect(() => {
         if (messageRef && messageRef.current) {
@@ -12,10 +15,15 @@ const MessageContainer = ({ messages }) => {
 
     return <div ref={messageRef} className='message-container' >
         {messages.map((m, index) =>
+        m.user==loggeduser?
             <div key={index} className='user-message'>
                 <div className='message bg-primary'>{m.message}</div>
                 <div className='from-user'>{m.user}</div>
-            </div>
+            </div>:
+            <div key={index} className='other-message'>
+            <div className='message bg-primary'>{m.message}</div>
+            <div className='from-user'>{m.user}</div>
+        </div>
         )}
     </div>
 }

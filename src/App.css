@@ -58,6 +58,11 @@ hr.line {
     padding-right: 5px;
     font-size: 18px;
 }
+.other-message {
+    text-align: left;
+    padding-right: 5px;
+    font-size: 18px;
+}
 
 .message {
     display: inline-flex;

@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import React, {useState } from 'react';
 import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 import Lobby from './components/Lobby';
 import Chat from './components/Chat';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+export const UserContext = React.createContext()
+
 const App = () => {
+
   const [connection, setConnection] = useState();
   const [messages, setMessages] = useState([]);
+  const [loggeduser, setloggeduser] = useState([]);
   const [users, setUsers] = useState([]);
 
   const joinRoom = async (user, room) => {
@@ -54,14 +59,18 @@ const App = () => {
       console.log(e);
     }
   }
-
-  return <div className='app'>
+  console.log(loggeduser);
+  return(
+  <UserContext.Provider value={{loggeduser, setloggeduser }}>
+  <div className='app'>
     <h2>MyChat</h2>
     <hr className='line' />
     {!connection
       ? <Lobby joinRoom={joinRoom} />
       : <Chat sendMessage={sendMessage} messages={messages} users={users} closeConnection={closeConnection} />}
   </div>
+  </UserContext.Provider>
+  )
 }
 
 export default App;
