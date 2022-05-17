@@ -17,11 +17,16 @@ const MessageContainer = ({ messages }) => {
         {messages.map((m, index) =>
         m.user==loggeduser?
             <div key={index} className='user-message'>
-                <div className='message bg-primary'>{m.message}</div>
-                <div className='from-user'>{m.user}</div>
+                <div className='message bg-primary'>{m.message}
+                <br/>
+                <p>x</p>
+                </div>
+               
             </div>:
             <div key={index} className='other-message'>
-            <div className='message bg-primary'>{m.message}</div>
+            <div className='message bg-primary'>{m.message}
+            <p><small>{m.user}</small></p>
+            </div>
             <div className='from-user'>{m.user}</div>
         </div>
         )}

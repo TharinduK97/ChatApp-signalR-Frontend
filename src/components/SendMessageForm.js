@@ -4,7 +4,7 @@ import { useState } from 'react';
 const SendMessageForm = ({ sendMessage }) => {
     const [message, setMessage] = useState('');
 
-    return <Form
+    return <Form 
         onSubmit={e => {
             e.preventDefault();
             sendMessage(message);

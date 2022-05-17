@@ -63,8 +63,7 @@ const App = () => {
   return(
   <UserContext.Provider value={{loggeduser, setloggeduser }}>
   <div className='app'>
-    <h2>MyChat</h2>
-    <hr className='line' />
+    
     {!connection
       ? <Lobby joinRoom={joinRoom} />
       : <Chat sendMessage={sendMessage} messages={messages} users={users} closeConnection={closeConnection} />}
