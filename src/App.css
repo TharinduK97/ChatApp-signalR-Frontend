@@ -21,11 +21,15 @@ hr.line {
     width: 950px;
     text-align: center;
 }
+.bgcol{
+    background-color: rgb(239, 243, 245);
+}
 
 .lobby {
     width: 400px;
     margin: auto;
     padding: 20px;
+    
 }
 
 .borderpadding {
@@ -34,6 +38,7 @@ hr.line {
     padding: 20px;
 }
 .chat {
+    background-color: rgb(239, 243, 245);
     display: grid;
 }
 
@@ -44,16 +49,16 @@ hr.line {
 
 .user-list {
     float: left;
-    background-color: #313131;
-    color:white;
+    height: 682px;    
+    color:#313131;
     width: 200px;
-    height: 440px;
+    background-color: rgb(239, 243, 245);
     margin-right: 4px;
 }
 
 .message-container {
-    height: 400px;    
-    background-color: white;
+    height: 600px;    
+    background-color: rgb(239, 243, 245);
     overflow: auto;
     border-radius: 5px;
     margin-bottom: 2px;
@@ -71,7 +76,7 @@ hr.line {
 }
 
 .message {
-    display: inline-flex;
+    display: inline-block;
     margin: 0px auto 0px auto;
     padding: 5px;
     font-size: 18px;

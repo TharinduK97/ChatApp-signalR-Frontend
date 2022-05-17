@@ -4,7 +4,8 @@ import { Form, Button } from 'react-bootstrap';
 import { UserContext } from '../App';
 
 const Lobby = ({ joinRoom }) => {
-    const { loggeduser, setloggeduser } = useContext(UserContext)
+    const { loggeduser, setloggeduser,roomName, setRoomName } = useContext(UserContext)
+    
     const [user, setUser] = useState();
     const [room, setRoom] = useState();
 
@@ -14,13 +15,14 @@ const Lobby = ({ joinRoom }) => {
                 <div class="col-sm">
                     
                 </div>
-                <div class="col-sm border border-primary">
+                <div class="col-sm border border-primary bgcol">
                     <h2>MyChat</h2>
                     <hr className='line' />
                     < Form className="lobby "
                         onSubmit={e => {
                             e.preventDefault();
                             setloggeduser(user);
+                            setRoomName(room);
                             joinRoom(user, room);
                         }} >
                         <div class="form-group">

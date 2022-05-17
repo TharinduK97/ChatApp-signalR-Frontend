@@ -14,20 +14,21 @@ const MessageContainer = ({ messages }) => {
     }, [messages]);
 
     return <div ref={messageRef} className='message-container' >
+        
         {messages.map((m, index) =>
         m.user==loggeduser?
             <div key={index} className='user-message'>
-                <div className='message bg-primary'>{m.message}
-                <br/>
-                <p>x</p>
-                </div>
+              <div className='message bg-success'>{m.message}
+            
+            </div>
+            <p><small><span class="badge badge-info">{m.user}</span></small></p>
                
             </div>:
             <div key={index} className='other-message'>
             <div className='message bg-primary'>{m.message}
-            <p><small>{m.user}</small></p>
+            
             </div>
-            <div className='from-user'>{m.user}</div>
+            <p><small><span class="badge badge-warning">{m.user}</span></small></p>
         </div>
         )}
     </div>

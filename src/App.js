@@ -13,6 +13,7 @@ const App = () => {
   const [connection, setConnection] = useState();
   const [messages, setMessages] = useState([]);
   const [loggeduser, setloggeduser] = useState([]);
+  const [roomName, setRoomName] = useState([]);
   const [users, setUsers] = useState([]);
 
   const joinRoom = async (user, room) => {
@@ -61,7 +62,7 @@ const App = () => {
   }
   console.log(loggeduser);
   return(
-  <UserContext.Provider value={{loggeduser, setloggeduser }}>
+  <UserContext.Provider value={{loggeduser, setloggeduser,roomName, setRoomName }}>
   <div className='app'>
     
     {!connection
